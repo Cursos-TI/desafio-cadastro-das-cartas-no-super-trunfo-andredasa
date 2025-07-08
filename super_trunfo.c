@@ -95,15 +95,32 @@ int main() {
     printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
     printf("Super Poder: %.2f\n", superPoder2);
 
-    // Comparações e exibição dos vencedores (1 = Carta 1 vence, 0 = Carta 2 vence)
+    // Comparações e exibição dos vencedores
     printf("\nComparação de Cartas:\n");
-    printf("População: Carta 1 venceu (%d)\n", populacao1 > populacao2);
-    printf("Área: Carta 1 venceu (%d)\n", area1 > area2);
-    printf("PIB: Carta 1 venceu (%d)\n", pib1 > pib2);
-    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", pontosTuristicos1 > pontosTuristicos2);
-    printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade1 < densidade2); // menor vence
-    printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPerCapita1 > pibPerCapita2);
-    printf("Super Poder: Carta 1 venceu (%d)\n", superPoder1 > superPoder2);
+
+    int resultado;
+
+    resultado = populacao1 > populacao2;
+    printf("População: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
+
+    resultado = area1 > area2;
+    printf("Área: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
+
+    resultado = pib1 > pib2;
+    printf("PIB: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
+
+    resultado = pontosTuristicos1 > pontosTuristicos2;
+    printf("Pontos Turísticos: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
+
+    // Densidade: menor é melhor
+    resultado = densidade1 < densidade2;
+    printf("Densidade Populacional: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
+
+    resultado = pibPerCapita1 > pibPerCapita2;
+    printf("PIB per Capita: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
+
+    resultado = superPoder1 > superPoder2;
+    printf("Super Poder: Carta %d venceu (%d)\n", resultado ? 1 : 2, resultado);
 
     return 0;
 }
